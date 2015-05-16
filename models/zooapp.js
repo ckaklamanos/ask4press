@@ -1,0 +1,1 @@
+	ZooApp = new $.mvc.model.extend("zooapp",{		id: '',		modified: '',		name: '',		priority: '',		type: '',		elements:{}	});	//var comment = new Comment();

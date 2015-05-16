@@ -1,0 +1,1 @@
+	ZooTimestamp = new $.mvc.model.extend("zootimestamp",{		id: '',		timestamp: ''	});

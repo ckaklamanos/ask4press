@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<title>ASK</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<link rel="stylesheet" type="text/css" href="jqmobi/css/jq.ui.css" title="default"/>
+<link rel="stylesheet" type="text/css" href="myapp/css/icons/style.css" title="default"/>
+<link rel="stylesheet" type="text/css" href="myapp/css/custom.css" title="default"/>
+<link rel="stylesheet" type="text/css" href="myapp/css/media.queries.css" title="default"/>
+	
+<script type="text/javascript" charset="utf-8" src="./jqmobi/js/jq.mobi.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./jqmobi/js/jq.ui.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./myapp/js/desktop.helper.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./jqmobi/js/mvc/jq.mvc.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./myapp/js/app.helper.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./myapp/js/functions.helper.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./jqmobi/js/plugins/jq.drawer.js"></script> 
+
+<script type="text/javascript" charset="utf-8" src="./myapp/js/plugins/moment.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./myapp/js/panel.helper.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./myapp/js/lang.helper.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./myapp/js/data.helper.js"></script> 
+
+<script>
+
+	if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+		//var desktopBrowsers = document.createElement("script");
+		//desktopBrowsers.src = "appframework/js/plugins/af.desktopBrowsers.js";
+		//var tag = $("head").append(desktopBrowsers);
+		
+		//var moment = document.createElement("script");
+		//moment.src = "myapp/js/plugins/moment.min.js";
+		//var tag = $("head").append(moment);			
+
+		//var moment_el_GR = document.createElement("script");
+		//moment_el_GR.src = "myapp/js/plugins/moment.el-GR.js";
+		//var tag = $("head").append(moment_el_GR);		
+		
+	}
+
+	if (!isDesktop() ) {
+		
+		//cordova.js
+		var phonegap = document.createElement("script");
+		phonegap.src = "cordova.js";
+		$("head").append(phonegap);
+		
+		
+		//PushNotification.js
+		var PushNotificationJS = document.createElement("script");
+		PushNotificationJS.src = "PushNotification.js";
+		$("head").append(PushNotificationJS);
+
+		if ($.os.android) {
+			var PushWooshHelperAndroid = document.createElement("script");
+			PushWooshHelperAndroid.src = "myapp/js/pushwoosh.helper.android.js";
+			$("head").append(PushWooshHelperAndroid);
+
+		}	
+		
+		if ($.os.ios) {
+			var PushWooshHelperIOS = document.createElement("script");
+			PushWooshHelperIOS.src = "myapp/js/pushwoosh.helper.ios.js";
+			$("head").append(PushWooshHelperIOS);
+
+		}		
+	}	
+	
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./myapp/js/cordova.helper.js"></script>
+	
+</head>
+
+<body>
+
+<div id="jQUi">
+
+<div id="header" class="header">
+	<a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='float:right;margin-top:0px' class='icon menu header-icon'></a>
+</div>
+	
+<div id="content">
+	
+	<div id="main" class="panel" selected="true" data-load="onMainLoad" data-unload="onMainUnload" data-tab="navbar_home" data-header="appHeader">
+		<ul>
+			<li class="double stigma">
+				<a onclick="$.mvc.route('zoocat/view/stigma/0')" class="icon arrow-right-after">
+					<span class="icon eye"></span>
+					<span class="li-title">Το στίγμα</span>
+					<span class="li-subtitle">Σημαδεμένος για μια ζωή</span>
+				</a>
+			</li>
+			<li class="double alitheies">
+				<a onclick='$.mvc.route("zoocat/view/alitheies/0")' class="icon arrow-right-after">
+					<span class="icon pencil"></span>
+					<span class="li-title">20 αλήθειες</span>	
+					<span class="li-subtitle">για την εξάρτηση από τα ναρκωτικά</span>
+				</a>
+			</li>
+			<li class="double therapeia">
+				<a onclick='$.mvc.route("zoocat/view/therapeia/0")' class="icon arrow-right-after">
+					<span class="icon aid"></span>
+					<span class="li-title">Η θεραπεία</span>	
+					<span class="li-subtitle">Αδιέξοδο ή υπέρβαση;</span>
+				</a>
+			</li>
+			<li class="double odigos">
+				<a onclick='$.mvc.route("zoocat/view/odigos/0")' class="icon arrow-right-after">
+					<span class="icon book"></span>
+					<span class="li-title">Οδηγός καλής πρακτικής</span>	
+					<span class="li-subtitle">Τί μπορείς να κάνεις εσύ;</span>		
+				</a>
+			</li>
+			<li class="double nea" id="neaLI">
+				<a onclick='$.mvc.route("zoocat/view/news/0")' class="icon arrow-right-after">
+					<span class="icon feed"></span>
+					<span class="li-title">Τελευταία νέα</span>	
+					<span class="li-subtitle">Μείνε σε επαφή</span>				
+				</a>
+			</li>
+			
+		</ul> 
+	</div> 
+	
+	<div id="contact" title="Contact" class="panel" data-load="onSecondLevelLoad" data-header="appHeader" data-defer="pages/contact.html"></div>
+	<div id="about" title="About" class="panel" data-load="onAboutLoad" data-header="appHeader" data-footer="aboutNavbar" data-defer="pages/about.html"></div>
+<!--<div id="help" title="Help" class="panel" data-load="onSecondLevelLoad" data-header="appHeader" data-defer="pages/help.html"></div>-->	
+	<div id="more" title="More" class="panel" data-load="onSecondLevelLoad" data-header="appHeader" data-defer="pages/more.html"></div>
+	<div id="comments" title="Comments" class="panel" data-header="appHeader" data-defer="pages/comments.html"></div>
+	<div id="postcomment" title="Post Comment" class="panel" data-header="appHeader" data-defer="pages/postcomment.html"></div>
+	<div id="zoocatPage" title="Category" class="panel" data-header="appHeader" data-footer="catNavbar" data-defer="pages/zoocat.html"></div>
+	<div id="zooitemPage" title="Item" class="panel" data-header="appHeader" data-footer="itemNavbar" data-defer="pages/zooitem.html"></div>
+
+</div>
+
+<!-- Default navbar-->
+<div id="navbar" class="navbar" style="display:none">
+    <a href="#main" id='navbar_home' class='icon home'>ASK4press</a>
+	<a onclick='$.mvc.route("zoocat/view/odigos/25")'  class="icon book" >Λεξικό</a>
+	<a onclick='$.mvc.route("zoocat/view/locations/0")'  class="icon map" >Κέντρα</a>
+	<a href="#contact"  class="icon mail" >Επικοινωνία</a>
+<!-- 	<a onclick='jq.ui.toggleSideMenu()' style="display:none;" class="icon menu only_ios_native" >Περισσότερα</a>
+ --></div>
+
+<!-- Item navbar-->
+<div id="itemNavbar" class="navbar" style="display:none">
+    <a class='icon arrow-left previousItem'>Προηγούμενο</a>
+	<a onclick='decreaseFont()' class="icon zoom-out">Σμίκρυνση</a>
+	<a class="icon share">Μοιράσου το</a>
+	<a onclick='increaseFont()' class="icon zoom-in" >Μεγέθυνση</a>
+	<a class="icon arrow-right nextItem">Επόμενο</a>
+</div>
+
+<!-- Category navbar-->
+<div id="catNavbar" class="navbar" style="display:none">
+    <a href="#main" id='navbar_home' class='icon home' >ASK4press</a>
+	<a onclick='$.mvc.route("zoocat/view/odigos/25")'  class="icon book" >Λεξικό</a>
+	<a onclick='$.mvc.route("zoocat/view/locations/0")'  class="icon map" >Κέντρα</a>
+	<a href="#contact"  class="icon mail" >Επικοινωνία</a>
+<!-- 	<a onclick='jq.ui.toggleSideMenu()'  style="display:none;" class="icon menu only_ios_native" >Περισσότερα</a>
+ --></div>
+
+<!-- About navbar-->
+<div id="aboutNavbar" style='margin:0;float:left;'>
+	<div class="footer-div" >&copy; 2013 Αντιναρκωτικό Συμβούλιο Κύπρου</div>
+</div>
+
+<!-- Headers -->
+<header id="appHeader" class="header">
+    <a id="customBack"  class='button backbutton icon arrow-left-3' style='left:0px;left:auto;overflow:hidden'></a>
+    <h1 id="pageTitle"></h1>
+    <a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='float:right;margin-top:0px;' class='icon menu header-icon'></a>
+    <a id='zoocommentsBtn' class='icon bubble header-icon hide'></a>
+	<a id='zoocommentAddBtn' class='icon pencil header-icon hide'></a>
+</header> 
+
+<nav>
+     <ul>
+	   <li> <a href="#about" class="icon info">Σχετικά</a></li>
+<!--   <li> <a href="#help" class="icon support">Βοήθεια</a></li> -->	   
+		<li> <a onclick='initCheckForUpdates()' class="icon spinner" >Ενημέρωση</a></li>
+	   <li class="only_android_native" style="display:none" > <a onclick='exitAppDialog()' class="icon switch">Έξοδος</a></li>
+	  </ul> 
+</nav>
+
+</div>
+ 
+
+ 
+</body>
+</html>

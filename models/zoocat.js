@@ -1,0 +1,1 @@
+	ZooCat = new $.mvc.model.extend("zoocat",{		id: '',		name: '',		description: '',		items:{}	});	//var comment = new Comment();

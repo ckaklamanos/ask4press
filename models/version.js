@@ -1,0 +1,1 @@
+	Version = new $.mvc.model.extend("version",{		id: '',		zoo_ts: '',		api: '',		version: '',		force_update: '',		google_play_url: '',		app_store_url: ''	});	//var comment = new Comment();

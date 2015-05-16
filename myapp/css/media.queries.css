@@ -1,0 +1,74 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	.backbutton{max-width:120px;}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+.backbutton{max-width:120px;}
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+	.backbutton{max-width:80px;}
+	li.double a span.li-subtitle{max-width:250px;}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+.backbutton{max-width:220px;}
+
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+.backbutton{max-width:160px;}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+.backbutton{max-width:160px;}
+}
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 768px) {
+#menubadge{display:none;}
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+.backbutton{max-width:160px;}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+.backbutton{max-width:160px;}
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+
+}
+
+/*Retina*/
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2) {
+#header {
+	background-image: url(../images/logo_ask_4_press_white@2.png)!important;
+	background-size: 120px 32px!important;
+}

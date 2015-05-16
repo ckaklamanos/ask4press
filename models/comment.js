@@ -1,0 +1,1 @@
+	Comment = new $.mvc.model.extend("comment",{		id: '',		parent_id: '',		item_id: '',		user_type: '',		author: '',		url: '',		created: '',		created: '',		isRead:false,		markRead:function(){			this.isRead=true;			return this;		}	});	//var comment = new Comment();
